@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Varam Crackers</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sparkle-bg"></div>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="hero-content">
+      <span class="hero-tag">Contact Us</span>
+      <h1>We'd Love to Hear From You</h1>
+      <p>Questions about products, bulk pricing or delivery? Reach out on WhatsApp or send us an enquiry below.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cart-layout">
+        <div class="form-panel">
+          <h2 style="color:var(--cream); margin-top:0;">Send an Enquiry</h2>
+          <p style="color:var(--text-muted); margin-bottom:26px;">Fill in your details below — submitting opens WhatsApp with your enquiry ready to send to us.</p>
+          <form id="enquiryForm" novalidate>
+            <div class="form-row">
+              <div>
+                <label for="encName">Full Name</label>
+                <input type="text" id="encName" placeholder="Your name" required>
+                <div class="error-msg">Please enter your name.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="encMobile">Mobile Number</label>
+                <input type="tel" id="encMobile" placeholder="10-digit mobile number" maxlength="10" required>
+                <div class="error-msg">Please enter a valid 10-digit mobile number.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="encMessage">Message</label>
+                <textarea id="encMessage" placeholder="Tell us what you're looking for..." required></textarea>
+                <div class="error-msg">Please enter a message.</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">📩 Submit Enquiry</button>
+          </form>
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom:20px;">
+            <span class="icon">📍</span>
+            <h3>Visit Us</h3>
+            <p>Sivakasi, Tamil Nadu, India</p>
+          </div>
+          <div class="card" style="margin-bottom:20px;">
+            <span class="icon">📞</span>
+            <h3>Call / WhatsApp</h3>
+            <p>+91 63834 11919</p>
+          </div>
+          <div class="card" style="margin-bottom:20px;">
+            <span class="icon">✉️</span>
+            <h3>Email</h3>
+            <p>hello@varamcrackers.example</p>
+          </div>
+          <div class="card">
+            <span class="icon">🕒</span>
+            <h3>Business Hours</h3>
+            <p>Mon – Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
+          </div>
+          <div class="text-center" style="margin-top:24px;">
+            <a href="https://wa.me/916383411919?text=Hi!%20I%27d%20like%20to%20enquire%20about%20your%20fireworks." target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">💬 Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="whatsapp-float"></div>
+
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+<script>
+  initSharedUI("contact.html", "Hi! I'd like to enquire about your fireworks.");
+</script>
+</body>
+</html>

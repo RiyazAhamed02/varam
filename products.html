@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Varam Crackers</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sparkle-bg"></div>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="hero-content">
+      <span class="hero-tag">Our Catalog</span>
+      <h1>Choose Your Fireworks</h1>
+      <p>Pick your favourites and add them to the cart. Head to the cart page to fill your details and place your order.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="category-bar" id="categoryBar"></div>
+      <div class="grid grid-4" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container text-center">
+      <a href="cart.html" class="btn btn-primary">🛒 Go to Cart / Orders →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="whatsapp-float"></div>
+
+<script src="js/main.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/data.js"></script>
+<script src="js/product-store.js"></script>
+<script src="js/products.js"></script>
+<script>
+  initSharedUI("products.html", "Hi! I'd like to enquire about a product.");
+</script>
+</body>
+</html>

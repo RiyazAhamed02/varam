@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk Stock Update — Varam Crackers</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sparkle-bg"></div>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="hero-content">
+      <span class="hero-tag">Admin Only</span>
+      <h1>Bulk Stock Update</h1>
+      <p>Upload your crackers stock sheet and update every item's quantity in one go.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container" style="max-width:520px;">
+      <div class="form-panel" id="adminGate">
+        <h2 style="color:var(--cream); margin-top:0;">Enter Admin Password</h2>
+        <p style="color:var(--text-muted); margin-bottom:20px;">This is a simple access gate, not full security — anyone with the password (or who reads the page source) can get in. Don't rely on this for anything sensitive.</p>
+        <div class="form-row">
+          <div>
+            <label for="adminPassword">Password</label>
+            <div class="pw-field">
+              <input type="password" id="adminPassword" placeholder="Enter admin password" autocomplete="off">
+              <button type="button" class="pw-toggle" data-target="adminPassword" aria-label="Show password" aria-pressed="false"></button>
+            </div>
+            <div class="error-msg" id="gateError" style="display:none;">Incorrect password. Try again.</div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="unlockBtn">🔓 Login</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0; display:none;" id="adminPanel">
+    <div class="container">
+
+      <!-- TOPBAR -->
+      <div class="admin-topbar">
+        <div class="topbar-hello">Signed in as <strong id="topbarName">Admin</strong></div>
+        <a href="admin.html" class="btn btn-outline btn-sm">← Back to Admin</a>
+        <button type="button" class="btn btn-outline btn-sm" id="lockAdminBtn">🔒 Lock</button>
+      </div>
+
+      <!-- UPLOAD -->
+      <div class="form-panel" style="margin-bottom:24px; max-width:640px;">
+        <h2 style="color:var(--cream); margin-top:0;">📄 Update Stock from Excel</h2>
+        <p style="color:var(--text-muted); margin-bottom:20px;">Upload your crackers stock sheet and the quantities below update automatically. The sheet needs an item name column and a quantity column — extra columns like price are ignored. Any item not already in the catalog gets added automatically, so however many items the sheet has, they'll all show up.</p>
+
+        <div class="drop-zone" id="stockDropZone" role="button" tabindex="0" aria-label="Choose or drop an Excel file">
+          <div class="dz-icon">📊</div>
+          <p class="dz-main">Click to choose a file, or drag it here</p>
+          <p class="dz-sub">.xlsx, .xls or .csv — upload a new sheet any time to refresh stock</p>
+          <input type="file" id="stockFileInput" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv">
+        </div>
+
+        <div id="importResult" style="display:none;"></div>
+      </div>
+
+      <!-- CURRENT STOCK AFTER IMPORT -->
+      <h2 style="color:var(--cream); margin:0 0 16px;">Stock After Update</h2>
+      <div id="adminProductList"></div>
+
+      <div style="max-width:640px; margin-top:24px;">
+        <div class="divider"></div>
+        <p class="pop-note" style="margin-bottom:12px;">New products created from a sheet only show on <em>this browser</em>, with price set to ₹0 as a placeholder. To make them visible to every visitor with the right price, download the entries below and add them into <code>js/data.js</code> on your hosting.</p>
+        <button type="button" class="btn btn-outline btn-block btn-sm" id="downloadProductsBtn">⬇️ Download New Products (for js/data.js)</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="whatsapp-float"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/data.js"></script>
+<script src="js/product-store.js"></script>
+<script src="js/admin-config.js"></script>
+<script src="js/admin-core.js"></script>
+<script src="js/stock-import.js"></script>
+<script src="js/bulk-stock.js"></script>
+<script>
+  initSharedUI("bulk-stock.html", "Hi! I have a question about the admin panel.");
+</script>
+</body>
+</html>

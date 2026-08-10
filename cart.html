@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart &amp; Orders — Varam Crackers</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sparkle-bg"></div>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="hero-content">
+      <span class="hero-tag">Your Cart</span>
+      <h1>Review &amp; Place Your Order</h1>
+      <p>Check your selected products below, then fill in your details to complete the order.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="cart-layout">
+        <!-- LEFT: Cart items + summary -->
+        <div>
+          <div class="form-panel" style="margin-bottom:24px;">
+            <h2 style="color:var(--cream); margin-top:0;">Selected Products</h2>
+            <div id="cartList"></div>
+            <div id="cartEmpty" class="empty-state">
+              <div class="icon">🛒</div>
+              <p>Your cart is empty.</p>
+              <a href="products.html" class="btn btn-primary" style="margin-top:14px;">Browse Products →</a>
+            </div>
+          </div>
+
+          <div class="form-panel" id="cartSummary">
+            <h2 style="color:var(--cream); margin-top:0;">Order Summary</h2>
+            <div class="summary-row"><span>Items</span><span id="sumItems">0</span></div>
+            <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">₹0</span></div>
+            <div class="summary-row"><span>Delivery</span><span id="sumDelivery">₹0</span></div>
+            <div class="summary-row total"><span>Grand Total</span><span id="sumGrandTotal">₹0</span></div>
+            <div class="badge-note">🚚 Free delivery on orders ₹999 and above. A flat ₹49 delivery charge applies below that.</div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Customer details form -->
+        <div class="form-panel">
+          <h2 style="color:var(--cream); margin-top:0;">Customer Details</h2>
+          <p style="color:var(--text-muted); margin-bottom:24px;">Total &amp; Grand Total are auto-filled from your cart selection above.</p>
+          <form id="orderForm" novalidate>
+            <div class="form-row">
+              <div>
+                <label for="custName">Full Name</label>
+                <input type="text" id="custName" placeholder="Your name" required>
+                <div class="error-msg">Please enter your name.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="custMobile">Mobile Number</label>
+                <input type="tel" id="custMobile" placeholder="10-digit mobile number" maxlength="10" required>
+                <div class="error-msg">Please enter a valid 10-digit mobile number.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="custAddress">Address</label>
+                <textarea id="custAddress" placeholder="House no, street, city, pincode" required></textarea>
+                <div class="error-msg">Please enter your address.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="custState">State</label>
+                <select id="custState" required>
+                  <option value="">Select your state</option>
+                  <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+                  <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option>
+                  <option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option>
+                  <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+                  <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+                  <option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+                  <option>Sikkim</option><option selected>Tamil Nadu</option><option>Telangana</option>
+                  <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+                  <option>West Bengal</option><option>Delhi</option><option>Puducherry</option>
+                </select>
+                <div class="error-msg">Please select your state.</div>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="totalAmount">Total Amount (₹)</label>
+                <input type="text" id="totalAmount" value="0" readonly>
+                <div class="field-hint">Auto-filled from cart</div>
+              </div>
+              <div>
+                <label for="grandTotal">Grand Total (₹)</label>
+                <input type="text" id="grandTotal" value="0" readonly>
+                <div class="field-hint">Includes delivery charge</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-whatsapp btn-block" id="submitOrderBtn">💬 Place Order via WhatsApp</button>
+            <p class="field-hint" style="text-align:center; margin-top:10px;">Opens WhatsApp with your order summary so we can confirm it.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="whatsapp-float"></div>
+
+<script src="js/main.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/data.js"></script>
+<script src="js/product-store.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  initSharedUI("cart.html", "Hi! I'd like help with my order.");
+</script>
+</body>
+</html>
