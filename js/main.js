@@ -5,9 +5,9 @@
 
 const SITE = {
   brand: "Varam Crackers",
-  whatsapp: "916383411919", // country code 91 + the 10-digit mobile
+  whatsapp: "918489351529", // country code 91 + the 10-digit mobile
   email: "hello@varamcrackers.example",
-  phone: "+91 63834 11919",
+  phone: "+91 8489351529",
   address: "Sivakasi, Tamil Nadu, India",
   cartKey: "fw_cart",       // current cart in progress
   ordersKey: "fw_orders",   // history of submitted orders (for export-all, optional use)
